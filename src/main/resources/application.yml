@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: employeeProject
+  datasource:
+    url: jdbc:postgresql://localhost:5432/employee_project
+    username: postgres1
+    password: postgres1
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true # Optional: useful for debugging
+        format_sql: true # Optional: pretty-prints SQL in logs
+
+  # Spring Data REST properties
+  data:
+    rest:
+      base-path: /demo-api
+      default-page-size: 10
+
+# can search like: http://localhost:8080/demo-api/members?page=0&size=15&sort=lastName,desc,number=1
